@@ -1,0 +1,12 @@
+@using PierreIdentity.ViewModels
+@model AddFlavorViewModel
+
+<h1>add flavor to @Html.DisplayFor(model => model.Treat.Name)</h1>
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.Treat.TreatId)
+
+  @Html.Label("Select flavors")
+  @Html.EditorFor(model => model.Flavors)
+  <input type="submit" value="Save" />
+}

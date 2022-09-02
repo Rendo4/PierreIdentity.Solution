@@ -1,0 +1,11 @@
+@model PierreIdentity.Models.Treat
+
+<h2>Would you like to delete @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+<div class="subnav">
+  <p>@Html.ActionLink("Back To Treats", "Index")</p>
+</div>

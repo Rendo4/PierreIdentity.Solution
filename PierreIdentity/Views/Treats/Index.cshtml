@@ -1,0 +1,25 @@
+@using PierreIdentity.Models;
+@using System.Security.Claims
+@model IEnumerable<PierreIdentity.Models.Treat>
+@if(User.Identity.IsAuthenticated)
+{
+<div class="subnav">
+  <p>@Html.ActionLink("Create new Treat", "Create")</p>
+</div>
+}
+
+<h1>Treats</h1>
+
+@if(Model.Any())
+{
+  <ul>
+    @foreach(Treat treat in Model)
+    {
+      <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+    }
+  </ul>
+}
+else
+{
+  <p>Nothing added yet</p>
+}

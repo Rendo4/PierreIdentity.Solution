@@ -1,0 +1,24 @@
+@using System.Security.Claims
+@model PierreIdentity.Models.Treat
+
+@if(User.Identity.IsAuthenticated)
+{
+<nav class="subnav">
+  <p>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId})</p>
+  <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId})</p>
+  <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId})</p>
+</nav>
+}
+
+<h3>@Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.TreatFlavors.Any())
+{
+  <ul>
+    @foreach(var treatFlavor in Model.TreatFlavors)
+    {
+      <li>@Html.ActionLink(@treatFlavor.Flavor.Name, "Details", "Flavors", new { id = @treatFlavor.Flavor.FlavorId})</li>
+
+    }
+  </ul>
+}
