@@ -4,10 +4,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PierreIdentity.Models
 {
-  public class Flavor
+  public class Treat
   {
-    public int FlavorId { get; set; }
+    public Treat()
+    {
+      this.TreatFlavors = new HashSet<TreatFlavor>();
+    }
+    public int TreatId { get; set; }
     [Required]
     public string Name { get; set; }
+    public virtual ICollection<TreatFlavor> TreatFlavors { get;}
   }
 }

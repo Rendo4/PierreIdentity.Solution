@@ -1,0 +1,6 @@
+C:\Users\Rendo\desktop\C#\PierreIdentity.Solution\obj\Debug\net5.0\PierreIdentity.csproj.AssemblyReference.cache
+C:\Users\Rendo\desktop\C#\PierreIdentity.Solution\obj\Debug\net5.0\PierreIdentity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rendo\desktop\C#\PierreIdentity.Solution\obj\Debug\net5.0\PierreIdentity.AssemblyInfoInputs.cache
+C:\Users\Rendo\desktop\C#\PierreIdentity.Solution\obj\Debug\net5.0\PierreIdentity.AssemblyInfo.cs
+C:\Users\Rendo\desktop\C#\PierreIdentity.Solution\obj\Debug\net5.0\PierreIdentity.csproj.CoreCompileInputs.cache
+C:\Users\Rendo\desktop\C#\PierreIdentity.Solution\obj\Debug\net5.0\PierreIdentity.MvcApplicationPartsAssemblyInfo.cache
