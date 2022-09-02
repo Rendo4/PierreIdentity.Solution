@@ -14,5 +14,6 @@ namespace PierreIdentity.Models
     [Required]
     public string Name { get; set; }
     public virtual ICollection<TreatFlavor> TreatFlavors { get;}
+    public virtual ApplicationUser User { get; set; }
   }
 }

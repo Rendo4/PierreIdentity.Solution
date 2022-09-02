@@ -1,0 +1,45 @@
+@using PierreIdentity.Models;
+@using System.Security.Claims
+@using PierreIdentity.ViewModels
+@model ListAllViewModel
+
+<h1>Pierre's Sweet and Savory Treats</h1>
+@if (User.Identity.IsAuthenticated)
+{
+<h3>Welcome @User.Identity.Name.</h3>
+
+@using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" class="btn btn-default" value="Log Out"/>
+  }
+}
+else
+{
+    <h3>Log in to make edits.</h3>
+    <p>@Html.ActionLink("Register/Log-in", "Index", "Account", null, new { @Class = "btn btn-primary"})</p>
+}
+
+<h3>All treats and flavors in the bakery</h3>
+<h4>Treats:</h4>
+@if(Model.Treats.Count == 0)
+{
+  <p>No treats created.</p>
+}
+  <ul>
+@foreach (Treat treat in Model.Treats)
+{
+    <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+}
+  </ul>
+
+<h4>Flavors:</h4>
+@if(Model.Flavors.Count == 0)
+{
+  <p>No flavors created.</p>
+}
+<ul>
+@foreach (Flavor flavor in Model.Flavors)
+{
+    <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+}
+  </ul>
