@@ -1,0 +1,26 @@
+@using PierreIdentity.Models;
+@using System.Security.Claims
+@model IEnumerable<PierreIdentity.Models.Flavor>
+
+@if(User.Identity.IsAuthenticated)
+{
+  <div class="subnav">
+  <p>@Html.ActionLink("Create new Flavor", "Create")</p>
+</div>
+}
+
+<h1>Flavors</h1>
+
+@if(Model.Any())
+{
+  <ul>
+    @foreach(Flavor flavor in Model)
+    {
+      <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</li>
+    }
+  </ul>
+}
+else
+{
+<p>no flavors yet</p>
+}
